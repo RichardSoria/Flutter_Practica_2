@@ -8,12 +8,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String appTitle = 'Quito La Carita de Dios';
+    final Color colorbg = Colors.blue[50]!;
 
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(title: const Text(appTitle),
-        centerTitle: true),
+        backgroundColor: colorbg,
+        appBar: AppBar(
+          title: const Text(appTitle),
+          centerTitle: true,
+          backgroundColor: colorbg,
+        ),
         body: const SingleChildScrollView(
           child: Column(
             children: [
@@ -30,6 +35,7 @@ class MyApp extends StatelessWidget {
                     'de música en vivo y luces cálidas. Es un destino que combina historia, '
                     'vida urbana y tradición en un solo lugar.',
               ),
+              ImageSection(image: 'images/images_1.jpg'),
             ],
           ),
         ),
@@ -63,12 +69,12 @@ class TitleSection extends StatelessWidget {
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text(location, style: TextStyle(color: Colors.grey[500])),
+                Text(location, style: TextStyle(color: Colors.grey[800])),
               ],
             ),
           ),
           /*3*/
-          Icon(Icons.star, color: Colors.red[500]),
+          Icon(Icons.star, color: Colors.blue[500]),
           const Text('41'),
         ],
       ),
@@ -81,7 +87,7 @@ class ButtonSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color color = Theme.of(context).primaryColor;
+    final Color color = Theme.of(context).primaryColorDark;
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
